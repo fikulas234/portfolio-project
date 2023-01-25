@@ -1,0 +1,11 @@
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.images img {
+  width: 130px;
+  height: 130px;
+  margin: 20px 0;
+}
