@@ -3,7 +3,7 @@ import Link from "next/link";
 import classes from "@/components/left-navigation/navigation.module.css";
 
 export default function Links(props) {
-  const NAVIGATION_LINKS = [
+  const navLinks = [
     {
       text: "About Me",
       href: "/about-me",
@@ -24,9 +24,10 @@ export default function Links(props) {
 
   return (
     <Fragment>
-      {NAVIGATION_LINKS.map((link, index) => {
+      {navLinks.map((link, index) => (
         <li key={index}>
           <Link
+            href={link.href}
             className={
               props.url === link.href
                 ? `${classes.link_active}`
@@ -35,8 +36,8 @@ export default function Links(props) {
           >
             {link.text}
           </Link>
-        </li>;
-      })}
+        </li>
+      ))}
     </Fragment>
   );
 }

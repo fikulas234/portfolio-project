@@ -1,0 +1,31 @@
+.project {
+  border: 1px solid #ff8c00;
+  padding: 5px;
+}
+
+.project a {
+  text-decoration: none;
+}
+
+.image {
+  width: 100%;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+}
+
+.content h3 {
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+}
+.content p {
+  text-align: center;
+  color: #fff;
+}
