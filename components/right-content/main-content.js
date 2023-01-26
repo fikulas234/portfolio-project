@@ -1,7 +1,6 @@
 import classes from "./main-content.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Clock from "react-live-clock";
 
 function RightSideContent(props) {
   const [date, setDate] = useState(new Date());
@@ -19,7 +18,8 @@ function RightSideContent(props) {
   return (
     <div className={classes.content}>
       <div className={classes.time}>
-        {`${date.toLocaleDateString()}` + " " + `${date.toLocaleTimeString()}`}
+        {/* {`${date.toLocaleDateString()}` + " " + `${date.toLocaleTimeString()}`} */}
+        1/25/2023
       </div>
       <div className={classes.url_path}>
         <p>{`homepage` + `${currentUrl}`}</p>

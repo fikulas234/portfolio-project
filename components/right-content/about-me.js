@@ -12,7 +12,7 @@ function AboutMeContent() {
         <NavigationElements />
         <RightSideContent>
           <div className={classes.text}>
-            <h1>About me text</h1>
+            <h1>Hello,</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dignissim malesuada tincidunt. Phasellus vehicula mattis lectus,

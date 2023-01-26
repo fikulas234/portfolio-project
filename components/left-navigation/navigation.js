@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 const NavigationElements = () => {
   const router = useRouter();
   const currentUrl = router.asPath;
-  console.log(currentUrl);
+
   return (
     <section className={classes.navigation}>
       <ul>
@@ -43,6 +43,18 @@ const NavigationElements = () => {
             }
           >
             Projects
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/resources"
+            className={
+              currentUrl === "/resources"
+                ? `${classes.link_active}`
+                : `${classes.link}`
+            }
+          >
+            Resources
           </Link>
         </li>
       </ul>

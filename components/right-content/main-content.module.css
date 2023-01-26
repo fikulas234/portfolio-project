@@ -1,13 +1,12 @@
 .content {
-  width: 70%;
-  border-top: 1px solid #fff;
+  width: 80%;
   color: #fff;
   position: relative;
 }
 
 .url_path {
   padding: 2px 15px;
-  background-color: #fff;
+  background-color: #ff8c00;
   color: #28282b;
 }
 
@@ -20,5 +19,9 @@
 @media (max-width: 768px) {
   .content {
     width: 100%;
+  }
+
+  .time {
+    display: none;
   }
 }
