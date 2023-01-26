@@ -1,7 +1,7 @@
-import React from "react";
+import { currentProject } from "@/helpers/all-projects";
 
-const ProjectDetailContent = () => {
-  return <div>ProjectContent</div>;
+const ProjectDetailContent = (props) => {
+  return <div>Nesto</div>;
 };
 
 export default ProjectDetailContent;

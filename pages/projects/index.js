@@ -7,6 +7,7 @@ function ProjectsPage(props) {
 
 export function getStaticProps() {
   const allPosts = AllProjects();
+  console.log(allPosts);
 
   return {
     props: {
