@@ -5,7 +5,9 @@ import NavigationElements from "@/components/left-navigation/navigation";
 import RightSideContent from "@/components/right-content/main-content";
 import ProjectDetailContent from "@/components/right-content/projects/project-detail";
 
-const ProjectsPage = () => {
+import { getProjectData, getProjectsFiles } from "@/lib/projects-util";
+
+const ProjectsPage = (props) => {
   const router = useRouter();
   const currentUrl = router.asPath;
   const confPath = /[^/]*$/.exec(currentUrl)[0];
@@ -13,10 +15,36 @@ const ProjectsPage = () => {
     <Card>
       <NavigationElements />
       <RightSideContent>
-        <ProjectDetailContent path={confPath} />
+        <ProjectDetailContent project={props.project} />
       </RightSideContent>
     </Card>
   );
 };
+
+export function getStaticProps(context) {
+  const { params } = context;
+  const { slug } = params;
+
+  const projectData = getProjectData(slug);
+
+  return {
+    props: {
+      project: projectData,
+    },
+  };
+}
+
+export function getStaticPaths() {
+  const projectFilesNames = getProjectsFiles();
+
+  const slugs = projectFilesNames.map((fileName) =>
+    fileName.replace(/\.md$/, "")
+  );
+
+  return {
+    paths: slugs.map((slug) => ({ params: { slug: slug } })),
+    fallback: false,
+  };
+}
 
 export default ProjectsPage;

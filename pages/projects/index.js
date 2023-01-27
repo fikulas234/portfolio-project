@@ -1,13 +1,12 @@
 import ProjectsContent from "@/components/right-content/projects/projects";
-import { AllProjects } from "@/helpers/all-projects";
+import { getAllProjects } from "@/lib/projects-util";
 
 function ProjectsPage(props) {
   return <ProjectsContent projects={props.projects} />;
 }
 
 export function getStaticProps() {
-  const allPosts = AllProjects();
-  console.log(allPosts);
+  const allPosts = getAllProjects();
 
   return {
     props: {

@@ -9,11 +9,6 @@ const ProjectItem = (props) => {
   const imagePath = `/images/project-images/${img}`;
   const linkPath = `/projects/${slug}`;
 
-  function projectPathHandler(e) {
-    const confPath = /[^/]*$/.exec(e.target.getAttribute("src"))[0];
-    router.push(currentUrl + "/" + confPath);
-  }
-
   return (
     <li className={classes.project}>
       <Link href={linkPath}>
