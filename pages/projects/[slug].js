@@ -38,7 +38,7 @@ export function getStaticPaths() {
   const projectFilesNames = getProjectsFiles();
 
   const slugs = projectFilesNames.map((fileName) =>
-    fileName.replace(/\.md$/, "")
+    fileName.replace(/\.js$/, "")
   );
 
   return {
