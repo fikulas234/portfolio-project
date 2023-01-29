@@ -1,4 +1,5 @@
 .navigation {
+  display: none;
   width: 20%;
   height: 100vh;
   border: 2px solid #fff;
@@ -37,8 +38,8 @@
 .link_active {
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .navigation {
-    display: none;
+    display: flex;
   }
 }

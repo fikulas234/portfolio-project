@@ -19,7 +19,7 @@ const ProjectDetailContent = (props) => {
   return (
     <div className={classes.project}>
       <div className={classes.image}>
-        <Image src={imagePath} width={600} height={600} alt={fixPath} />
+        <Image src={imagePath} width={1200} height={800} alt={fixPath} />
       </div>
       {fixPath === "polovni-automobili" && <PolovniAutomobili />}
       {fixPath === "fitness-web" && <FitnessWeb />}

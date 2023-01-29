@@ -14,7 +14,7 @@ const ProjectItem = (props) => {
     <li className={classes.project}>
       <Link href={linkPath}>
         <div className={classes.image}>
-          <Image src={imagePath} alt={slug} width={300} height={200} />
+          <Image src={imagePath} alt={slug} width={500} height={400} />
         </div>
         <div className={classes.content}>
           <h3>{pathFix}</h3>
