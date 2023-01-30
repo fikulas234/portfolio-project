@@ -1,6 +1,9 @@
 .project {
   border: 1px solid #ff8c00;
-  padding: 5px;
+}
+
+.project:hover .image {
+  padding: 0;
 }
 
 .project a {
@@ -9,9 +12,13 @@
 
 .image {
   width: 100%;
+  padding: 5px 5px 0 5px;
+  transition-property: padding;
+  transition-duration: 250ms;
 }
 
 .image img {
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -34,7 +41,7 @@
 }
 .content p {
   text-align: center;
-  color: #fff;
+  color: #ff8c00;
 }
 
 @media (max-width: 600px) {

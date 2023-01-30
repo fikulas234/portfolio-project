@@ -2,12 +2,28 @@
   width: 80%;
   color: #fff;
   position: relative;
+  border-left: 3px solid #fff;
+  padding-bottom: 40px;
+}
+
+.content a {
+  color: #28282b;
 }
 
 .url_path {
-  padding: 2px 15px;
+  padding: 3px 24px;
   background-color: #ff8c00;
   color: #28282b;
+  position: relative;
+}
+
+.url_path img {
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  margin-right: 5px;
+  align-self: center;
 }
 
 .time {
@@ -19,6 +35,7 @@
 @media (max-width: 768px) {
   .content {
     width: 100%;
+    border: none;
   }
 
   .time {

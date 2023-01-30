@@ -8,7 +8,7 @@ const PolovniAutomobili = () => {
       <p>
         This was the first project I did after learning React. It's a single
         page app, which is a copy of the most popular online vehicle marketplace
-        in Serbia -
+        in Serbia -{" "}
         <Link href="https://www.polovniautomobili.com/" target="_blank">
           polovniautomobili.com
         </Link>

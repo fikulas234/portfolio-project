@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import classes from "@/components/left-navigation/navigation.module.css";
+import classes from "@/components/layout/mobile-navigation.module.css";
 
-export default function Links(props) {
+export default function MobileLinks(props) {
   const confPath = "/" + props.url.split("/")[1];
 
   const navLinks = [

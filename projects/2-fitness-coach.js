@@ -7,7 +7,7 @@ const FitnessWeb = () => {
       <h1>Fitness Coach</h1>
       <p>
         My friend who is a personal coach wanted some simple web page where he
-        can advertise himself. It was done in vanilla javascript.
+        can advertise himself. It was done in vanilla JavaScript.
       </p>
       <div className={classes.demo}>
         <Link

@@ -5,15 +5,25 @@
   margin-top: 20px;
 }
 
+/* .project_content a {
+  text-decoration: none;
+} */
+
+.project_content p a {
+  font-size: 16px;
+  display: inline-block;
+  margin-left: 10px;
+  text-decoration: underline;
+  color: #fff;
+}
+
 .demo {
   margin-top: 20px;
 }
 
 .demo a {
-  /*   text-decoration: none; */
   text-align: center;
   font-size: 28px;
-
   color: #ff8c00;
 }
 
