@@ -2,18 +2,18 @@
   display: none;
   width: 100%;
   border-top: 2px solid #fff;
-  padding: 10px 4px;
+  padding: 15px 0;
 }
 
 .mobile_nav ul {
-  width: 100%;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2px 0 0 2px;
 }
 
 .mobile_nav ul li {
+  margin: 0 10px;
   font-size: 14px;
 }
 
@@ -24,6 +24,7 @@
   padding: 4px 8px;
   border-radius: 5px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .mobile_nav ul li > .link_active {
@@ -32,15 +33,10 @@
   text-shadow: none;
 }
 
-.link_active {
-  background-color: #fff;
-  color: #000;
-  text-shadow: none;
-}
-
 @media (max-width: 768px) {
   .mobile_nav {
     display: flex;
+    justify-content: center;
   }
 
   .mobile_nav_active {

@@ -30,7 +30,7 @@ function RightSideContent(props) {
           {
             <Link href="/">
               <Image
-                src="images/icons/homepage-house.svg"
+                src="/images/icons/homepage-house.svg"
                 width={14}
                 height={14}
                 alt="house icon"

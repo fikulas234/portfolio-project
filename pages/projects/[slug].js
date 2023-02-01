@@ -8,9 +8,6 @@ import ProjectDetailContent from "@/components/right-content/projects/project-de
 import { getProjectData, getProjectsFiles } from "@/lib/projects-util";
 
 const ProjectsPage = (props) => {
-  const router = useRouter();
-  const currentUrl = router.asPath;
-  const confPath = /[^/]*$/.exec(currentUrl)[0];
   return (
     <Card>
       <NavigationElements />

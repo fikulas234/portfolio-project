@@ -8,17 +8,17 @@
 
 .content a {
   color: #28282b;
+  position: relative;
 }
 
 .url_path {
   padding: 3px 24px;
   background-color: #ff8c00;
   color: #28282b;
-  position: relative;
 }
 
 .url_path img {
-  left: 6px;
+  left: -18px;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;

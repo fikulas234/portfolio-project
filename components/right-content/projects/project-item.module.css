@@ -33,15 +33,18 @@
   
 } */
 
-.content h3 {
+.content h2 {
   text-align: center;
   font-size: 16px;
   text-decoration: none;
   color: #fff;
+  font-size: 16px;
+  margin: 0 2px;
 }
 .content p {
   text-align: center;
   color: #ff8c00;
+  margin: 4px 0;
 }
 
 @media (max-width: 600px) {
