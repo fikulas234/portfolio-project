@@ -54,6 +54,10 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .image {
+    padding: 0;
+  }
 }
 
 @media (min-width: 600px) {

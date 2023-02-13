@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: "Roboto Mono", monospace;
+  /* font-family: "Roboto", sans-serif; */
 }
 
 * {
@@ -21,7 +24,7 @@ body {
 
 body {
   /* background: #28282b; */
-  background: #28282b;
+  background: #1a202c;
 }
 
 /* a {
