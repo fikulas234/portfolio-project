@@ -14,7 +14,7 @@ function AboutMeContent() {
           <div className={classes.text}>
             <h1>Hello, my name is Filip</h1>
             <p>
-              I'm a junior front-end developer. About year ago I started my
+              I&apos;m a junior front-end developer. About year ago I started my
               learning journey and first time I wrote a few lines of code by
               myself and saw the effect from it I fell in love with coding
               instantly. Lorem ipsum dolor sit amet, consectetur adipiscing
