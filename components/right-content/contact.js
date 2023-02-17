@@ -11,10 +11,25 @@ import ContactForm from "./contact-form";
 function ContactPageContent() {
   const [messageSent, setMessageSent] = useState(false);
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (e) => {
+  const handleChangeEmail = (e) => {
     setEmail(e.target.value);
+  };
+
+  const handleChangeMessage = (e) => {
+    setMessage(e.target.value);
+
+    const box = document.getElementById("message");
+    const height = box.offsetHeight;
+
+    if (height < box.scrollHeight) {
+      box.style.height = box.scrollHeight + "px";
+    }
+    if (height > box.scrollHeight) {
+      box.style.height = box.scrollHeight + "px";
+    }
   };
 
   const submitForm = (e) => {
@@ -26,6 +41,8 @@ function ContactPageContent() {
     if (email.match(mailFormat)) {
       setMessageSent(true);
       setErrorMessage("");
+      setEmail("");
+      setMessage("");
     } else {
       setErrorMessage("Please enter a valid email");
     }
@@ -104,9 +121,12 @@ function ContactPageContent() {
               )}
             </div>
             <ContactForm
-              handleChange={handleChange}
+              handleChangeEmail={handleChangeEmail}
+              handleChangeMessage={handleChangeMessage}
               submitForm={submitForm}
               errorMsg={errorMessage}
+              emailContent={email}
+              messageContent={message}
             />
           </div>
         </div>

@@ -1,22 +1,8 @@
 import { Fragment } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
-
 import classes from "./contact.module.css";
 
 const ContactForm = (props) => {
-  const messageHandleChange = () => {
-    var box = document.getElementById("message");
-    let height = box.offsetHeight;
-
-    if (height < box.scrollHeight) {
-      box.style.height = box.scrollHeight + "px";
-    }
-    if (height > box.scrollHeight) {
-      box.style.height = box.scrollHeight + "px";
-    }
-  };
-
   return (
     <Fragment>
       <form
@@ -37,22 +23,24 @@ const ContactForm = (props) => {
 
         <div className={classes.input_fields}>
           <input
+            value={props.emailContent}
             type="email"
             id="email"
             name="email"
             placeholder="your email"
-            onChange={props.handleChange}
+            onChange={props.handleChangeEmail}
           />
           <span>{props.errorMsg}</span>
 
           <div className={classes.msg_and_btn}>
             <textarea
+              value={props.messageContent}
               rows={2}
               type="text"
               id="message"
               name="message"
               placeholder="message Filip"
-              onChange={messageHandleChange}
+              onChange={props.handleChangeMessage}
             />
 
             <button type="submit">
