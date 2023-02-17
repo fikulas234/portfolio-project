@@ -1,6 +1,5 @@
 .contact {
   /* border: 1px solid #fff; */
-  height: 100%;
   width: 100%;
 }
 
@@ -11,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .chat_top img {
   border-radius: 50%;
@@ -27,12 +26,28 @@
   align-self: center;
 }
 
+.chat_name img {
+  border: 1px solid #ff8c00;
+  /* background-color: #1a202c; */
+}
+
+.chat_title {
+  text-align: center;
+  font-size: 14px;
+  color: #ff8c00;
+}
+
 .soc_networks {
   display: flex;
   gap: 10px;
 }
 
-.soc_networks img {
+.messages {
+  /* width: 80%; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
 }
 
 .message {
@@ -45,9 +60,10 @@
 
 .message img {
   border-radius: 50%;
-}
-
-.first_message {
+  /* border: 1px solid #fff; */
+  background-color: #1d2951;
+  width: 60px;
+  height: 60px;
 }
 
 .form_container {
@@ -59,12 +75,16 @@
 
 .form_container form {
   display: flex;
-  /* flex-direction: column; */
   gap: 20px;
-  /* align-items: start; */
-  padding: 0 10px;
-  /* position: relative; */
+  /* border: 2px solid #1d2951;
+  border-left: none;
+  border-right: none; */
+  padding: 10px 10px;
   margin-top: 40px;
+}
+
+.form_container form input {
+  min-height: 40px;
 }
 
 .form_container form input,
@@ -73,18 +93,19 @@
   border: 1px solid #1d2951;
   border-radius: 12px;
   background-color: #1d2951;
-  padding: 5px;
-
+  padding: 0 5px;
+  font-size: 16px;
   color: #fff;
 }
 
 .form_container form input:focus,
-.form_container form textarea {
-  outline: none;
+.form_container form textarea:focus {
+  outline: #ff8c0050 solid;
 }
 
 .form_container form textarea {
-  font-size: 14px;
+  min-height: 80px;
+  overflow: hidden;
 }
 
 .form_container form input::placeholder,
@@ -104,7 +125,6 @@
   border: 1px solid #1d2951;
   border-radius: 50px;
   cursor: pointer;
-  /* position: absolute; */
   right: 8px;
   bottom: 4px;
 }
@@ -121,9 +141,14 @@
 }
 
 .placeholder_div {
-  min-width: 50px;
-  height: 50px;
+  /* min-width: 50px; */
+  /* height: 50px; */
   align-self: center;
+}
+
+.placeholder_div img {
+  width: 60px;
+  height: 60px;
 }
 
 .input_fields {
@@ -131,4 +156,99 @@
   flex-direction: column;
   gap: 10px;
   width: 100%;
+}
+
+.input_fields span {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+@media (min-width: 768px) {
+  .contact {
+    display: flex;
+  }
+
+  .chat_top {
+    min-height: 100vh;
+    width: 20%;
+    gap: 10px;
+    flex-direction: column-reverse;
+    justify-content: start;
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .soc_networks,
+  .chat_name {
+    width: 100%;
+    /* justify-content: center; */
+  }
+
+  .soc_networks {
+    justify-content: end;
+  }
+
+  .chat_name {
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .chat_name img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .chat_title {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .messages {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .form_container {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .form_container {
+    align-content: center;
+  }
+
+  .form_container form {
+    width: 80%;
+    margin: 40px auto;
+    justify-content: center;
+  }
+
+  .form_container form input,
+  .form_container form textarea {
+    width: 100%;
+  }
+
+  .form_container form input {
+    min-height: 50px;
+  }
+
+  .form_container form textarea {
+    min-height: 100px;
+  }
+
+  .input_fields span {
+    text-align: center;
+    padding: 0;
+  }
+
+  .msg_and_btn {
+    display: block;
+  }
+
+  .form_container form button {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
 }

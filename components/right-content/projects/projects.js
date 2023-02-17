@@ -8,18 +8,16 @@ function ProjectsContent(props) {
   const { projects } = props;
 
   return (
-    <div>
-      <Card>
-        <NavigationElements />
-        <RightSideContent>
-          <ul className={classes.grid}>
-            {projects.map((item, index) => (
-              <ProjectItem key={index} projects={item} />
-            ))}
-          </ul>
-        </RightSideContent>
-      </Card>
-    </div>
+    <Card>
+      <NavigationElements />
+      <RightSideContent>
+        <ul className={classes.grid}>
+          {projects.map((item, index) => (
+            <ProjectItem key={index} projects={item} />
+          ))}
+        </ul>
+      </RightSideContent>
+    </Card>
   );
 }
 

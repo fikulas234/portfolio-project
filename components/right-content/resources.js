@@ -19,7 +19,7 @@ const ResourcesContent = () => {
           </p>
           <p>
             <Link href="https://www.theodinproject.com/" target="_blank">
-              www.theodinproject.com
+              The Odin Project
             </Link>{" "}
             - overall, one of the best free resources for learning front-end. It
             also has very nice and helpfull community!

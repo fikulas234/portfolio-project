@@ -12,6 +12,13 @@ function RightSideContent(props) {
 
   const router = useRouter();
   const currentUrl = router.asPath;
+  const strIndexClickable = currentUrl.indexOf(
+    "/",
+    currentUrl.indexOf("/") + 1
+  );
+  const strIndexNonclickable = currentUrl.lastIndexOf("/");
+  const clickablePath = currentUrl.substring(0, strIndexClickable);
+  const nonclickablePath = currentUrl.substring(strIndexNonclickable + 1);
 
   useEffect(() => {
     const timer = setInterval(() => setDate(new Date()), 1000);
@@ -38,7 +45,8 @@ function RightSideContent(props) {
               homepage
             </Link>
           }
-          {currentUrl}
+          <Link href={clickablePath}>{clickablePath}</Link>/
+          <span>{nonclickablePath}</span>
         </p>
       </div>
       {currentUrl === "/" ? <HomePageContent /> : props.children}

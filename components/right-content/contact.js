@@ -1,20 +1,33 @@
 import { useState } from "react";
+
 import Card from "../layout/card";
 import NavigationElements from "../left-navigation/navigation";
 import RightSideContent from "./main-content";
 import Image from "next/image";
 import classes from "./contact.module.css";
 
-function ContactPageContent() {
-  const handleChange = () => {
-    var box = document.getElementById("message");
-    let height = box.offsetHeight;
+import ContactForm from "./contact-form";
 
-    if (height < box.scrollHeight) {
-      box.style.height = box.scrollHeight + "px";
-    }
-    if (height > box.scrollHeight) {
-      box.style.height = box.scrollHeight + "px";
+function ContactPageContent() {
+  const [messageSent, setMessageSent] = useState(false);
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    const mailFormat =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (email.match(mailFormat)) {
+      setMessageSent(true);
+      setErrorMessage("");
+    } else {
+      setErrorMessage("Please enter a valid email");
     }
   };
 
@@ -32,6 +45,10 @@ function ContactPageContent() {
                 alt="avatar"
               />
               <span>Filip</span>
+            </div>
+
+            <div className={classes.chat_title}>
+              <span>Direct message</span>
             </div>
 
             <div className={classes.soc_networks}>
@@ -53,10 +70,10 @@ function ContactPageContent() {
             <div className={classes.messages}>
               <div className={`${classes.first_message} ${classes.message}`}>
                 <Image
-                  src="/images/slika.png"
+                  src="/images/greetings.png"
                   height={50}
                   width={50}
-                  alt="avatar"
+                  alt="greetings avatar"
                 />
                 <p>Hello!</p>
               </div>
@@ -69,49 +86,28 @@ function ContactPageContent() {
                 />
                 <p>
                   If you have any question or you want to work with me please
-                  contact me below.
+                  contact me below 😊
                 </p>
               </div>
-            </div>
-            <form>
-              <div className={classes.placeholder_div}>
-                <Image
-                  src="/images/avatar-placeholder.svg"
-                  height={50}
-                  width={50}
-                  alt="avatar icon"
-                />
-              </div>
-
-              <div className={classes.input_fields}>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your email"
-                />
-
-                <div className={classes.msg_and_btn}>
-                  <textarea
-                    rows={2}
-                    onChange={handleChange}
-                    type="text"
-                    id="message"
-                    name="message"
-                    placeholder="message Filip"
+              {messageSent && (
+                <div className={`${classes.message}`}>
+                  <Image
+                    src="/images/thumbs-up.png"
+                    height={50}
+                    width={50}
+                    alt="thumbs up avatar"
                   />
-
-                  <button>
-                    <Image
-                      src="/images/send-icon.svg"
-                      height={30}
-                      width={30}
-                      alt="send icon"
-                    />
-                  </button>
+                  <p>
+                    Thank you for contacting me. I will get back to you ASAP! 😊
+                  </p>
                 </div>
-              </div>
-            </form>
+              )}
+            </div>
+            <ContactForm
+              handleChange={handleChange}
+              submitForm={submitForm}
+              errorMsg={errorMessage}
+            />
           </div>
         </div>
       </RightSideContent>

@@ -6,7 +6,7 @@ const PolovniAutomobili = () => {
     <div className={classes.project_content}>
       <h1>Polovni Automobili</h1>
       <p>
-        This was the first project I did after learning React. It's a single
+        This was the first project I did after learning React.js. It's a single
         page app, which is a copy of the most popular online vehicle marketplace
         in Serbia -{" "}
         <Link href="https://www.polovniautomobili.com/" target="_blank">

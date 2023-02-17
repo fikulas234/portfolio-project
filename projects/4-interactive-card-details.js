@@ -6,7 +6,7 @@ const InteractiveCardDetails = () => {
     <div className={classes.project_content}>
       <h1>Interactive Card Details</h1>
       <p>
-        This was challenge from
+        This was challenge from{" "}
         <Link href="https://www.frontendmentor.io/" target="_blank">
           frontendmentor.io
         </Link>
