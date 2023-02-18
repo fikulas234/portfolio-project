@@ -32,22 +32,22 @@ function ContactPageContent() {
     }
   };
 
-  // const submitForm = (e) => {
-  //   e.preventDefault();
+  const submitForm = (e) => {
+    e.preventDefault();
 
-  //   const mailFormat =
-  //     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // const mailFormat =
+    //   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  //   if (email.match(mailFormat)) {
-  //     setMessageSent(true);
-  //     setErrorMessage("");
-  //     setEmail("");
-  //     setMessage("");
-  //   } else {
-  //     setErrorMessage("Please enter a valid email");
-  //     return;
-  //   }
-  // };
+    // if (email.match(mailFormat)) {
+    //   setMessageSent(true);
+    //   setErrorMessage("");
+    //   setEmail("");
+    //   setMessage("");
+    // } else {
+    //   setErrorMessage("Please enter a valid email");
+    //   return false;
+    // }
+  };
 
   return (
     <Card>
@@ -122,12 +122,12 @@ function ContactPageContent() {
               )}
             </div>
             <ContactForm
-              // handleChangeEmail={handleChangeEmail}
+              handleChangeEmail={handleChangeEmail}
               handleChangeMessage={handleChangeMessage}
-              // submitForm={submitForm}
-              // errorMsg={errorMessage}
-              // emailContent={email}
-              // messageContent={message}
+              submitForm={submitForm}
+              errorMsg={errorMessage}
+              emailContent={email}
+              messageContent={message}
             />
           </div>
         </div>
