@@ -10,6 +10,7 @@ export default async function handler(req, res) {
   const body = req.body;
 
   if (!formValid(body)) {
+    console.log("ovde sam usao 2222");
     res.status(422).end();
     return;
   }
@@ -40,7 +41,9 @@ export default async function handler(req, res) {
     const data = result.unwrap();
     console.log(data);
     res.status(201).end();
+    console.log("ovde sam usao 3333");
   } catch (error) {
+    console.log("ovde sam izbacio error 3333");
     console.error(error);
     res.status(500).end();
   }

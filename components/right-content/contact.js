@@ -44,6 +44,7 @@ function ContactPageContent() {
       const data = new FormData(e.currentTarget);
 
       try {
+        console.log("ovde sam usao 1111");
         setSendingNotification("Sending message...");
         const response = await fetch("/api/contact", {
           method: "post",
@@ -53,6 +54,7 @@ function ContactPageContent() {
           throw new Error(`Invalid response: ${response.status}`);
         }
       } catch (err) {
+        console.log("ovde sam izbacio error 1111");
         console.error(err);
         setSendingNotification("Can't submit the form, try again later?");
       }
