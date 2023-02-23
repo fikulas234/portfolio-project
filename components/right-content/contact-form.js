@@ -5,7 +5,7 @@ import classes from "./contact.module.css";
 const ContactForm = (props) => {
   return (
     <Fragment>
-      <form name="contact" method="POST" onSubmit={props.handleSubmit}>
+      <form method="POST" onSubmit={props.handleSubmit}>
         <div className={classes.placeholder_div}>
           <Image
             src="/images/avatar-placeholder.svg"
