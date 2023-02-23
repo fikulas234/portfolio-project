@@ -13,9 +13,11 @@ function ContactPageContent() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [sendingNotification, setSendingNotification] = useState("");
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
+    setErrorMessage("");
   };
 
   const handleChangeMessage = (e) => {
@@ -32,14 +34,31 @@ function ContactPageContent() {
     }
   };
 
-  const submitForm = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const mailFormat =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (email.match(mailFormat)) {
+      const data = new FormData(e.currentTarget);
+
+      try {
+        setSendingNotification("Sending message...");
+        const response = await fetch("/api/contact", {
+          method: "post",
+          body: new URLSearchParams(data),
+        });
+        if (!response.ok) {
+          throw new Error(`Invalid response: ${response.status}`);
+        }
+      } catch (err) {
+        console.error(err);
+        setSendingNotification("Can't submit the form, try again later?");
+      }
+
       setMessageSent(true);
+      setSendingNotification("Message sent!");
       setErrorMessage("");
       setEmail("");
       setMessage("");
@@ -48,7 +67,7 @@ function ContactPageContent() {
       setErrorMessage("Please enter a valid email");
       return false;
     }
-  };
+  }
 
   return (
     <Card>
@@ -121,11 +140,14 @@ function ContactPageContent() {
                   </p>
                 </div>
               )}
+              <div className={classes.message_status}>
+                <p>{sendingNotification}</p>
+              </div>
             </div>
             <ContactForm
               handleChangeEmail={handleChangeEmail}
               handleChangeMessage={handleChangeMessage}
-              submitForm={submitForm}
+              handleSubmit={handleSubmit}
               errorMsg={errorMessage}
               emailContent={email}
               messageContent={message}

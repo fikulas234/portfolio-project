@@ -163,6 +163,11 @@
   padding-left: 5px;
 }
 
+.message_status {
+  text-align: center;
+  color: #ff8c00;
+}
+
 @media (min-width: 768px) {
   .contact {
     display: flex;
