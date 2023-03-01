@@ -46,7 +46,7 @@ function ContactPageContent() {
       try {
         console.log("ovde sam usao 1111");
         setSendingNotification("Sending message...");
-        const response = await get("/api/contact", {
+        const response = await fetch("/api/contact", {
           method: "post",
           body: new URLSearchParams(data),
         });
