@@ -14,7 +14,7 @@ const ResourcesContent = () => {
           <p>
             Here you will find resources I have used while learning front-end
             technologies. Maybe it will be usefull for someone starting learning
-            journey so I will leave sources where you can find resources and
+            journey so I will leave links where you can find resources and
             courses.
           </p>
           <p>

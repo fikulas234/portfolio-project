@@ -24,6 +24,9 @@ const ProjectItem = (props) => {
         <div className={classes.content}>
           <h2>{projectTitle}</h2>
           <p>See more</p>
+          <div className={classes.overlay}>
+            <span className={classes.overlay_text}>SEE MORE</span>
+          </div>
         </div>
       </Link>
     </li>

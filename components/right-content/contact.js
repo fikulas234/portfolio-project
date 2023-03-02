@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import Card from "../layout/card";
 import NavigationElements from "../left-navigation/navigation";
@@ -44,7 +45,6 @@ function ContactPageContent() {
       const data = new FormData(e.currentTarget);
 
       try {
-        console.log("ovde sam usao 1111");
         setSendingNotification("Sending message...");
         const response = await fetch("/api/contact", {
           method: "post",
@@ -54,13 +54,12 @@ function ContactPageContent() {
           throw new Error(`Invalid response: ${response.status}`);
         }
       } catch (err) {
-        console.log("ovde sam izbacio error 1111");
         console.error(err);
         setSendingNotification("Can't submit the form, try again later?");
       }
 
       setMessageSent(true);
-      setSendingNotification("Message sent!");
+      setSendingNotification("");
       setErrorMessage("");
       setEmail("");
       setMessage("");
@@ -92,18 +91,25 @@ function ContactPageContent() {
             </div>
 
             <div className={classes.soc_networks}>
-              <Image
-                src="/images/social-networks/github.svg"
-                height={30}
-                width={30}
-                alt="github icon"
-              />
-              <Image
-                src="/images/social-networks/linkedin.svg"
-                height={30}
-                width={30}
-                alt="linkedin icon"
-              />
+              <Link href="https://github.com/fikulas234" target="_blank">
+                <Image
+                  src="/images/social-networks/github.svg"
+                  height={30}
+                  width={30}
+                  alt="github icon"
+                />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/filip-trbojevic/"
+                target="_blank"
+              >
+                <Image
+                  src="/images/social-networks/linkedin.svg"
+                  height={30}
+                  width={30}
+                  alt="linkedin icon"
+                />
+              </Link>
             </div>
           </div>
           <div className={classes.form_container}>
