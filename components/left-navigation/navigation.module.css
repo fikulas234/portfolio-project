@@ -28,7 +28,7 @@
   text-decoration: none;
   color: #fff;
   text-shadow: 1px 1px 1px #fff, 1px 1px 1px #ccc;
-  padding: 2px 0;
+  padding: 2px 0px;
   border-radius: 5px;
 }
 
@@ -54,6 +54,7 @@
   background-color: #fff;
   color: #000;
   text-shadow: none;
+  padding: 0 4px;
 }
 
 @media (min-width: 768px) {

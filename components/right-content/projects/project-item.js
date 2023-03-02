@@ -23,12 +23,13 @@ const ProjectItem = (props) => {
         </div>
         <div className={classes.content}>
           <h2>{projectTitle}</h2>
-          <p>See more</p>
-          <div className={classes.overlay}>
-            <span className={classes.overlay_text}>SEE MORE</span>
-          </div>
         </div>
       </Link>
+      <div className={classes.overlay}>
+        <Link href={linkPath} className={classes.overlay_link}>
+          <p className={classes.overlay_text}>SEE MORE</p>
+        </Link>
+      </div>
     </li>
   );
 };
