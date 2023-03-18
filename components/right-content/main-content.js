@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 import HomePageContent from "./homepage";
 
 function RightSideContent(props) {
-  const [date, setDate] = useState(new Date());
+  const [spinnerClass, setSpinnerClass] = useState("showSpinner");
+
+  console.log("spinnerClass", spinnerClass);
 
   const router = useRouter();
   const currentUrl = router.asPath;
@@ -21,17 +23,15 @@ function RightSideContent(props) {
   const nonclickablePath = currentUrl.substring(strIndexNonclickable + 1);
 
   useEffect(() => {
-    const timer = setInterval(() => setDate(new Date()), 1000);
+    const timer = setTimeout(() => setSpinnerClass("hideSpinner"), 600);
     return function cleanup() {
       clearInterval(timer);
     };
-  });
+  }, [spinnerClass]);
 
   return (
     <div className={classes.content}>
-      <div className={classes.time}>
-        {/* {`${date.toLocaleDateString()}` + " " + `${date.toLocaleTimeString()}`} */}
-      </div>
+      <div className={classes.time}></div>
       <div className={classes.url_path}>
         <p>
           {
@@ -47,6 +47,7 @@ function RightSideContent(props) {
           }
           <Link href={clickablePath}>{clickablePath}</Link>/
           <span>{nonclickablePath}</span>
+          <span className={classes[spinnerClass]}></span>
         </p>
       </div>
       {currentUrl === "/" ? <HomePageContent /> : props.children}

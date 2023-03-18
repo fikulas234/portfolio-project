@@ -1,9 +1,13 @@
 import classes from "../components/right-content/projects/single-project/profile-page.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 const ProfilePage = () => {
   return (
     <div className={classes.project_content}>
+      <Head>
+        <title>Profile Page</title>
+      </Head>
       <h1>Profile Page</h1>
       <p>
         This was some simple project at the beggining of my journey to learn

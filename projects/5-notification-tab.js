@@ -1,9 +1,13 @@
 import classes from "../components/right-content/projects/single-project/notification-tab.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 const NotificationTab = () => {
   return (
     <div className={classes.project_content}>
+      <Head>
+        <title>Notification Tab</title>
+      </Head>
       <h1>Notification Tab</h1>
       <p>
         This was some simple challenge from

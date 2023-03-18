@@ -31,8 +31,8 @@ const ResourcesContent = () => {
             >
               The Complete JavaScript Course 2023: From Zero to Expert!
             </Link>{" "}
-            - personally I have found that Jonas Schmedtmann has the best
-            approach at teaching complicated concepts so it is easy to
+            - personally, I have found that Jonas Schmedtmann has the best
+            approach in teaching complicated concepts so it is easy to
             understand.
           </p>
           <p>

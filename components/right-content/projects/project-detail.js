@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
-
 import classes from "./project-detail.module.css";
 
 import PolovniAutomobili from "@/projects/1-polovni-automobili";
@@ -13,11 +11,7 @@ import ProfilePage from "@/projects/6-profile-page";
 const ProjectDetailContent = (props) => {
   const { project } = props;
 
-  const router = useRouter();
-  const currentUrl = router.asPath;
-  const confPath = /[^/]*$/.exec(currentUrl)[0];
-  const fixPath = confPath.replace(/^.{2}/g, "");
-
+  const fixPath = project.slug.replace(/^.{2}/g, "");
   const imagePath = `/images/project-images/${fixPath}.PNG`;
 
   return (

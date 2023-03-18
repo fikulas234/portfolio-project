@@ -61,10 +61,6 @@
   transform: translate(-50%, -50%);
 }
 
-.project:hover .overlay {
-  height: 100%;
-}
-
 .content h2 {
   text-align: center;
   font-size: 16px;
@@ -95,5 +91,16 @@
   .content {
     padding: 15px 0;
     display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .content {
+    padding: 15px 0;
+    display: block;
+  }
+
+  .project:hover .overlay {
+    height: 100%;
   }
 }

@@ -10,6 +10,10 @@
   margin-bottom: 5px;
 }
 
+.content span {
+  color: #ff8c00;
+}
+
 .look {
   margin-top: 20px;
 }

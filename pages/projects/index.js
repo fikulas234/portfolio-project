@@ -1,8 +1,17 @@
+import Head from "next/head";
 import ProjectsContent from "@/components/right-content/projects/projects";
 import { getAllProjects } from "@/lib/projects-util";
+import { Fragment } from "react";
 
 function ProjectsPage(props) {
-  return <ProjectsContent projects={props.projects} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>My projects</title>
+      </Head>
+      <ProjectsContent projects={props.projects} />
+    </Fragment>
+  );
 }
 
 export function getStaticProps() {

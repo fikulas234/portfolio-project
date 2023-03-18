@@ -1,9 +1,13 @@
 import classes from "../components/right-content/projects/single-project/interactive-card.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 const InteractiveCardDetails = () => {
   return (
     <div className={classes.project_content}>
+      <Head>
+        <title>Interactive Card Details</title>
+      </Head>
       <h1>Interactive Card Details</h1>
       <p>
         This was challenge from{" "}

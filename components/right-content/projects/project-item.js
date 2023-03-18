@@ -10,7 +10,6 @@ const ProjectItem = (props) => {
   const imagePath = `/images/project-images/${pathFix}.PNG`;
   const linkPath = `/projects/${slug}`;
   const projectTitle = pathFix
-    // .replaceAll("-", " ")
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");

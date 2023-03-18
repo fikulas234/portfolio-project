@@ -1,9 +1,13 @@
 import classes from "../components/right-content/projects/single-project/shakes-recipes.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 const ShakesRecipes = () => {
   return (
     <div className={classes.project_content}>
+      <Head>
+        <title>Shakes Recipes</title>
+      </Head>
       <h1>Shakes Recipes</h1>
       <p>
         The idea for this project was that you can input all the ingredients you

@@ -1,9 +1,13 @@
 import classes from "../components/right-content/projects/single-project/polovni-automobili.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 const PolovniAutomobili = () => {
   return (
     <div className={classes.project_content}>
+      <Head>
+        <title>Polovni Automobili</title>
+      </Head>
       <h1>Polovni Automobili</h1>
       <p>
         This was the first project I did after learning React.js. It's a single
