@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import RightSideContent from "./main-content";
 import Card from "../layout/card";
 import NavigationElements from "../left-navigation/navigation";
