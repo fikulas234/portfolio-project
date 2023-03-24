@@ -10,8 +10,6 @@ import HomePageContent from "./homepage";
 function RightSideContent(props) {
   const [spinnerClass, setSpinnerClass] = useState("showSpinner");
 
-  console.log("spinnerClass", spinnerClass);
-
   const router = useRouter();
   const currentUrl = router.asPath;
   const strIndexClickable = currentUrl.indexOf(
