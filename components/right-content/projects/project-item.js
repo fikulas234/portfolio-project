@@ -39,17 +39,17 @@ const ProjectItem = (props) => {
 
       <div className={classes.tags}>
         {projectTitle === "Polovni Automobili" &&
-          polovniTags.map((tag) => <span>{tag}</span>)}
+          polovniTags.map((tag) => <span key={tag}>{tag}</span>)}
         {projectTitle === "Fitness Coach" &&
-          fitnessTags.map((tag) => <span>{tag}</span>)}
+          fitnessTags.map((tag) => <span key={tag}>{tag}</span>)}
         {projectTitle === "Shakes Recipes" &&
-          shakesTags.map((tag) => <span>{tag}</span>)}
+          shakesTags.map((tag) => <span key={tag}>{tag}</span>)}
         {projectTitle === "Interactive Card Details" &&
-          cardDetailsTags.map((tag) => <span>{tag}</span>)}
+          cardDetailsTags.map((tag) => <span key={tag}>{tag}</span>)}
         {projectTitle === "Notification Tab" &&
-          notificationTags.map((tag) => <span>{tag}</span>)}
+          notificationTags.map((tag) => <span key={tag}>{tag}</span>)}
         {projectTitle === "Profile Page" &&
-          profilePageTags.map((tag) => <span>{tag}</span>)}
+          profilePageTags.map((tag) => <span key={tag}>{tag}</span>)}
       </div>
       <Link href={linkPath}>
         <p className={classes.see_more}>See more</p>
