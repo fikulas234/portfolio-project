@@ -11,7 +11,7 @@ function RightSideContent(props) {
   const [spinnerClass, setSpinnerClass] = useState("showSpinner");
 
   const router = useRouter();
-  const currentUrl = router.asPath;
+  const currentUrl = router.asPath.includes("?") ? "/" : router.asPath;
   const strIndexClickable = currentUrl.indexOf(
     "/",
     currentUrl.indexOf("/") + 1
