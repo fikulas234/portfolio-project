@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }) {
           name="description"
           content="Developer from Serbia who is passionate about Frontend."
         />
+        <link rel="icon" href="images/laptop.png" />
       </Head>
       <Component {...pageProps} />
     </Layout>

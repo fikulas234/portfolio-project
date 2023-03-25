@@ -79,8 +79,8 @@ function ContactPageContent() {
             <div className={classes.chat_name}>
               <Image
                 src="/images/slika.png"
-                height={30}
-                width={30}
+                height={50}
+                width={50}
                 alt="avatar"
               />
               <span>Filip</span>
