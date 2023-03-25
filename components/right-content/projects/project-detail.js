@@ -12,7 +12,7 @@ const ProjectDetailContent = (props) => {
   const { project } = props;
 
   const fixPath = project.slug.replace(/^.{2}/g, "");
-  const imagePath = `/images/project-images/${fixPath}.PNG`;
+  const imagePath = `/images/project-images/${fixPath}.webp`;
 
   return (
     <div className={classes.project}>

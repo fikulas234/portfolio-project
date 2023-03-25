@@ -7,7 +7,7 @@ const ProjectItem = (props) => {
   const { slug } = props.projects;
 
   const pathFix = slug.replace(/^.{2}/g, "");
-  const imagePath = `/images/project-images/${pathFix}.PNG`;
+  const imagePath = `/images/project-images/${pathFix}.webp`;
   const linkPath = `/projects/${slug}`;
   const projectTitle = pathFix
     .split("-")
@@ -25,7 +25,7 @@ const ProjectItem = (props) => {
     <li className={classes.project}>
       <Link href={linkPath}>
         <div className={classes.image}>
-          <Image src={imagePath} alt={slug} width={500} height={400} />
+          <Image src={imagePath} alt={slug} width={700} height={500} />
         </div>
         <div className={classes.content}>
           <h2>{projectTitle}</h2>
