@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FiMinimize2, FiMaximize } from "react-icons/fi";
+import { AiFillCloseSquare } from "react-icons/ai";
 
 import classes from "./main-content.module.css";
 import { useRouter } from "next/router";
@@ -8,6 +10,8 @@ import { useEffect, useState } from "react";
 import HomePageContent from "./homepage";
 
 function RightSideContent(props) {
+  const visibility = props.visibility;
+
   const [spinnerClass, setSpinnerClass] = useState("showSpinner");
 
   const router = useRouter();
@@ -29,7 +33,6 @@ function RightSideContent(props) {
 
   return (
     <div className={classes.content}>
-      <div className={classes.time}></div>
       <div className={classes.url_path}>
         <p>
           {
@@ -48,7 +51,16 @@ function RightSideContent(props) {
           <span className={classes[spinnerClass]}></span>
         </p>
       </div>
-      {currentUrl === "/" ? <HomePageContent /> : props.children}
+      <div className={classes.content_wrapper}>
+        <div
+          className={`${classes.content_wrapper_options} ${classes[visibility]}`}
+        >
+          <span className={classes.content_minimize} />
+          <span className={classes.content_maximize} />
+          <span className={classes.content_close} />
+        </div>
+        {currentUrl === "/" ? <HomePageContent /> : props.children}
+      </div>
     </div>
   );
 }

@@ -4,7 +4,9 @@
 
 .chat_top {
   height: 50px;
-  background-color: #1d2951;
+  /* background-color: #1d2951; */
+  border-radius: 5px;
+  background-color: #1f2f62;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +65,7 @@
 
 .message img {
   border-radius: 50%;
-  background-color: #1d2951;
+  background-color: #1f2f62;
   width: 60px;
   height: 60px;
 }
@@ -87,10 +89,10 @@
 
 .form_container form input,
 .form_container form textarea {
-  width: 80%;
-  border: 1px solid #1d2951;
+  width: 75%;
+  border: 1px solid #1f2f62;
   border-radius: 12px;
-  background-color: #1d2951;
+  background-color: #1f2f62;
   padding: 0 5px;
   font-size: 16px;
   color: #fff;
@@ -119,8 +121,8 @@
   align-self: center;
   width: 50px;
   height: 50px;
-  background-color: #1d2951;
-  border: 1px solid #1d2951;
+  background-color: #1f2f62;
+  border: 1px solid #1f2f62;
   border-radius: 50px;
   cursor: pointer;
   right: 8px;
@@ -178,6 +180,9 @@
     min-height: 100vh;
     width: 20%;
     gap: 10px;
+    /* position: absolute;
+    top: 0;
+    bottom: 0; */
     flex-direction: column-reverse;
     justify-content: start;
     margin-bottom: 0;

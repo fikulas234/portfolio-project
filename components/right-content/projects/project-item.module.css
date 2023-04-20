@@ -1,6 +1,7 @@
 .project {
   border: 1px solid #ff8c00;
   position: relative;
+  background-color: #1a202c;
 }
 
 .project:hover .image {

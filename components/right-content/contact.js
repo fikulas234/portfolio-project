@@ -73,7 +73,7 @@ function ContactPageContent() {
   return (
     <Card>
       <NavigationElements />
-      <RightSideContent>
+      <RightSideContent visibility={"hidden"}>
         <div className={classes.contact}>
           <div className={classes.chat_top}>
             <div className={classes.chat_name}>
