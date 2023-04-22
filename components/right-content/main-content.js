@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FiMinimize2, FiMaximize } from "react-icons/fi";
-import { AiFillCloseSquare } from "react-icons/ai";
 
 import classes from "./main-content.module.css";
 import { useRouter } from "next/router";
