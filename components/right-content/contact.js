@@ -87,7 +87,7 @@ function ContactPageContent() {
             </div>
 
             <div className={classes.chat_title}>
-              <span>Direct message</span>
+              <span>Contact me</span>
             </div>
 
             <div className={classes.soc_networks}>
