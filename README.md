@@ -1,5 +1,5 @@
 # Front-End Portfolio
-This is my main portfolio application. It is my first project in Next.js after finishing course on Udemy. There is still work needed style-wise. The idea was file-based structure website.
+This is my main portfolio application. It is my first project in Next.js after finishing course on Udemy. The idea was file-based structure website, but there is still work needed style-wise.
 
 ## Tech stack:
 ReactJS, NextJS, CSS modules
