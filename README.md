@@ -1,3 +1,18 @@
-After finishing Next.js course on Udemy I wanted to create something unique from scratch and because I needed portfolio website anyways I decided to make it in Next.js. Because I wanted to make use of one of the next.js core functionalities - nested routing, I decided to make some kind of file-based website. As time goes on I will do some style changes to make it more appealing but this is it for now.
+# Front-End Portfolio
+This is my main portfolio application. It is my first project in Next.js after finishing course on Udemy. There is still work needed style-wise. The idea was file-based structure website.
 
-[Live Site](https://filipt-portfolio.netlify.app/)
+## Tech stack:
+ReactJS, NextJS, CSS modules
+
+## Live link
+https://filipt-portfolio.netlify.app/
+
+## How to run
+All commands are run from the root of the project, from a terminal:
+
+| Command  | Action |
+| ------------- | ------------- |
+| npm install  | Installs dependencies  |
+| npm run dev  | Starts local dev server at localhost:3000  |
+| npm run build  | Build your production site to ./dist/  |
+
