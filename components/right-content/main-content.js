@@ -7,10 +7,27 @@ import { useEffect, useState } from "react";
 
 import HomePageContent from "./homepage";
 
+const swipeableRoutes = [
+  {
+    route: "/about-me",
+    id: 0,
+  },
+  {
+    route: "/skills",
+    id: 1,
+  },
+  {
+    route: "/projects",
+    id: 2,
+  },
+  {
+    route: "/resources",
+    id: 3,
+  },
+];
+
 function RightSideContent(props) {
   const visibility = props.visibility;
-
-  const [spinnerClass, setSpinnerClass] = useState("showSpinner");
 
   const router = useRouter();
   const currentUrl = router.asPath.includes("?") ? "/" : router.asPath;
@@ -22,6 +39,48 @@ function RightSideContent(props) {
   const clickablePath = currentUrl.substring(0, strIndexClickable);
   const nonclickablePath = currentUrl.substring(strIndexNonclickable + 1);
 
+  const [spinnerClass, setSpinnerClass] = useState("showSpinner");
+
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const found = swipeableRoutes.find((element) => element.route === currentUrl);
+  const [currentRouteIndex, setCurrentRouteIndex] = useState(
+    found ? found.id : ""
+  );
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      setCurrentRouteIndex((prevIndex) =>
+        prevIndex === swipeableRoutes.length - 1 ? 0 : prevIndex + 1
+      );
+    } else if (isRightSwipe) {
+      setCurrentRouteIndex((prevIndex) =>
+        prevIndex === 0 ? swipeableRoutes.length - 1 : prevIndex - 1
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (found) {
+      router.push(swipeableRoutes[currentRouteIndex].route);
+    }
+  }, [currentRouteIndex]);
+
   useEffect(() => {
     const timer = setTimeout(() => setSpinnerClass("hideSpinner"), 600);
     return function cleanup() {
@@ -30,7 +89,12 @@ function RightSideContent(props) {
   }, [spinnerClass]);
 
   return (
-    <div className={classes.content}>
+    <div
+      className={classes.content}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <div className={classes.url_path}>
         <p>
           {
